@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+
+    <title>Demo: TTT Fumo Project / LSM</title>
+    <meta name="description" content="Gmod Loading Screen Maker / Running a demo of TTT Fumo Project - Powered by gmod-lsm.com">
+
+    <meta name="theme-color" content="#9b59b6">
+
+    <link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/normalize.css" rel="stylesheet">
+
+    <link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/bootstrap.css" rel="stylesheet">
+
+    <link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/loadingscreen-base.css" rel="stylesheet">
+    
+     <link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/load.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://gmod-lsm.com/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+    <style>
+
+  .text-left-layout-progress{
+    padding-top: 0.6rem !important;
+  }
+
+  .text-right-layout-progress{
+    padding-top: 0.6rem !important;
+  }
+
+  @media screen and (max-width: 1152px), screen and (max-height: 745px) {
+
+  	.text-left-layout-progress{
+    padding-top: 0.46rem !important;
+  }
+
+  .text-right-layout-progress{
+    padding-top: 0.45rem !important;
+  }
+
+  }
+
+  #bg, #bg img, #bg2{
+    transition: 2s filter linear;
+-webkit-transition: 2s -webkit-filter linear;
+-moz-transition: 2s -moz-filter linear;
+-ms-transition: 2s -ms-filter linear;
+-o-transition: 2s -o-filter linear;
+  }
+
+    html,body{
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body{
+      background: #000;
+    }
+
+
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/css2.css" rel="stylesheet">
+  <style>
+  	.loading-screen,.now-playing-text{
+  		font-family: 'Ubuntu', sans-serif; font-weight: 800
+  	}
+  </style>
+
+  </head>
+
+  <body>
+
+    <div id="loader-wrapper" style="display: none;">
+      <div id="loader"></div>
+  </div>
+
+  
+  	  		<div class="now-playing" style="background-color: #ffffff">
+  		<div class="now-playing-icon"><i style="color: #343a40" class="fas fa-volume-up fa-2x"></i></div><div class="now-playing-text"><label for="music-text" class="ml-2 mb-0 pb-0 lead" style="color: #000000">Сейчас играет:</label>
+  		<h5 id="music-text" class="ml-2 mb-0 py-0" style="color: #343a40">s - s</h5></div>
+  		</div>
+  		
+    
+        
+    <div class="powered-by"><div style="background-color: #9b59b6"></div><a id="upgrade-pro" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="" data-content="Upgrade to Pro for just 1.99$ / month! &lt;br&gt;&lt;a href='https://gmod-lsm.com/dashboard/pro'&gt;More info...&lt;/a&gt;" data-original-title="Want to remove this?" aria-describedby="popover273900" data-imu-valid="false"><img src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/powered.png" data-imu-valid="true" data-imu-supported="false"></a>
+    </div>
+
+	
+  
+    
+
+<link href="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/simple.css" rel="stylesheet">
+
+<div class="loading-screen">
+      <div class="title-info">
+        <h4 class="my-0 py-0" style="color: #ffffff">Добро пожаловать на</h4>
+        <h1 class="my-0 py-0" style="color: #ffffff">TTT Fumo Project</h1>
+      </div>
+      <div class="progress-bar-n text-left" style="background-color: #ffffff">
+        <h2 class="text-left-layout-progress" style="margin: 0; line-height: 1 !important; color: #343a40"><div style="display: inline-block;font-weight:600;padding-top: 2px;"><span id="percent">40</span>%</div><span class="progresstext text-right-layout-progress" id="progresstext">Установка дополнений</span></h2>
+          <div class="progress-bar-n-inner" id="progress-bar" style="background-color: rgb(155, 89, 182); width: 40%;"><div style="display: inline-block;"><h2 class="text-left-layout-progress" style="margin: 0; line-height: 1 !important; color: #ffffff"><div style="overflow: visible;display: inline-block;white-space: nowrap;font-weight:600;padding-top: 2px;"><span id="percent-loaded">40</span>%</div><span class="progresstext text-right-layout-progress" id="progresstext-loaded">Установка дополнений</span></h2></div></div>
+        </div>
+              </div>
+      <div style="background-size: cover; margin: 0px; padding: 0px; position: absolute; left: -5%; width: 110%; height: 110%; top: -5%; background-image: url(&quot;http://img10.reactor.cc/pics/post/full/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png&quot;); opacity: 0; filter: blur(8px);" id="bg">
+      </div> 
+
+      <div style="background-size: cover; margin: 0px; padding: 0px; position: absolute; left: -5%; width: 110%; height: 110%; top: -5%; background-image: url(&quot;http://img10.reactor.cc/pics/post/full/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png&quot;); background-repeat: no-repeat; filter: blur(8px);" id="bg2">
+      </div>
+
+    <script src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/jquery.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $( "#loader-wrapper" ).fadeOut( "slow" );
+      });
+    $(function () {
+  $("[data-toggle=popover]").popover({html:true})
+  $("#upgrade-pro").popover('show')
+
+})
+  </script>
+
+    <script type="text/javascript">
+
+   document.getElementById("percent").innerHTML = "5";
+   document.getElementById("percent-loaded").innerHTML = "5";
+
+   $('#progress-bar').css({ "width" : "5%"});
+
+   document.getElementById("progresstext").innerHTML = "\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0435...";
+   document.getElementById("progresstext-loaded").innerHTML = "\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0435...";
+</script>
+
+      <script type="text/javascript">
+
+        var bguse = ["http:\/\/img10.reactor.cc\/pics\/post\/full\/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png"        ,"http:\/\/img10.reactor.cc\/pics\/post\/full\/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png","http:\/\/img10.reactor.cc\/pics\/post\/full\/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png","http:\/\/img10.reactor.cc\/pics\/post\/full\/Anime-Kirisame-Marisa-Touhou-Project-Hakurei-Reimu-5120490.png"        ];
+      </script>
+
+             <script type="text/javascript">
+      $(function() {
+      var volume = 20;
+        $("audio").each(function(){ this.volume = volume/100; });
+      });
+    </script>
+    <audio controls="controls" autoplay="autoplay" loop="" hidden="">
+      <source src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/f94f569bce6cfdd859c440fb85898c7bfa247a1b1201080201.oga" type="audio/ogg">
+      <source src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/f94f569bce6cfdd859c440fb85898c7bfa247a1b1201080201.htm" type="audio/mpeg">
+    </audio>
+          <script>
+    	//Change Progress
+	$(document).ready(function(){
+	
+	for (let progress = 0; progress < 11; progress++) {
+		setTimeout( function timer(){
+	
+	if(progress == 1){
+
+
+      var blurinit = false;
+      if(blurinit == false){
+        $('#bg, #bg2').css('filter','blur(8px)');
+        $('#bg, #bg2').css('-webkit-filter','blur(8px)');
+        blurinit = true;
+      }
+
+  
+      
+	$("#progress-bar").animate({width: '10%'});
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 10;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 2){
+		
+	$("#progresstext").text("\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0434\u043e\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0439");
+	$("#progress-bar").animate({width: '20%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 20;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 3){
+	
+	$("#progress-bar").animate({width: '30%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 30;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 4){
+	
+	$("#progress-bar").animate({width: '40%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 40;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 5){
+	
+	$("#progress-bar").animate({width: '50%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 50;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	/*
+	if(progress == 6){
+	
+	$("#progresstext").text('Workshop complete');
+	$("#progress-bar").animate({width: '60%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 60;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	} */
+	
+	if(progress == 6){
+		
+	$("#progresstext").text("\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u043c\u0430\u0441\u0442\u0435\u0440\u0441\u043a\u043e\u0439 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430");
+	$("#progress-bar").animate({width: '70%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 70;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 8){
+	
+	$("#progress-bar").animate({width: '80%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 80;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 9){
+		
+	$("#progresstext").text("\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043a\u043b\u0438\u0435\u043d\u0442\u0435...");
+	$("#progress-bar").animate({width: '90%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 90;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 10){
+	
+	$("#progress-bar").animate({width: '100%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 100;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+
+
+	if(progress == 1){
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 10;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 2){
+		
+	$("#progresstext-loaded").text("\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0434\u043e\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0439");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 20;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 3){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 30;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 4){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 40;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 5){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 50;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	/*
+	if(progress == 6){
+	
+	$("#progresstext").text('Workshop complete');
+	$("#progress-bar").animate({width: '60%'});
+	
+	
+	$('#percent').each(function() {
+  var $this = $(this),
+      countTo = 60;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	} */
+	
+	if(progress == 6){
+		
+	$("#progresstext-loaded").text("\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u043c\u0430\u0441\u0442\u0435\u0440\u0441\u043a\u043e\u0439 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 70;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 8){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 80;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 9){
+		
+	$("#progresstext-loaded").text("\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043a\u043b\u0438\u0435\u043d\u0442\u0435...");
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 90;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+	
+	if(progress == 10){
+	
+	
+	
+	$('#percent-loaded').each(function() {
+  var $this = $(this),
+      countTo = 100;
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 300,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+});
+	
+	}
+
+	}, progress*2000 );
+	} 
+
+});
+
+
+    </script>
+
+    <script>
+		//showDemo();
+    $("#showDemo").fadeOut(0);
+		function showDemo(){
+			$("#showDemo").fadeIn(2000);
+			setTimeout(function(){
+				$("#showDemo").fadeOut(2000);
+				setTimeout(showDemo, 4000);
+			}, 4000);
+		}
+	</script>
+
+      <script src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/background-cycle.js"></script>
+
+    <script src="Demo%20TTT%20Fumo%20Project%20_%20LSM_files/bootstrap.js"></script>
+
+  
+
+<div class="popover fade bs-popover-top show" role="tooltip" id="popover273900" x-placement="top" style="position: absolute; transform: translate3d(-2px, 733px, 0px); top: 0px; left: 0px; will-change: transform;"><div class="arrow" style="left: 15px;"></div><h3 class="popover-header">Want to remove this?</h3><div class="popover-body">Upgrade to Pro for just 1.99$ / month! <br><a href="https://gmod-lsm.com/dashboard/pro" data-imu-valid="false">More info...</a></div></div></body><style>.imu-2ceo8nn9l3-highlight{outline: 3px solid purple !important}</style></html>
